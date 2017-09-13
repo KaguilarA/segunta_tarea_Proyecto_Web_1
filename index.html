@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tarea 3 | Kevin Aguilar Alvarado | Proyecto Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <section>
+        <div ng-app ng-init="songList=[
+      {name:'Happy',length:'4:03'},
+      {name:'Froot',length:'5:31'},
+      {name:'Im a Ruin',length:'4:32'},
+      {name:'Blue',length:'4:14'},
+      {name:'Forget',length:'4:09'},
+      {name:'Gold',length:'4:14'},
+      {name:'Better Than That',length:'4:36'}]">
+
+      <table class="table-striped table-responsive">
+        <thead>
+          <tr>
+            <th>Song</th>
+            <th>Length</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="x in songList">
+            <td>{{x.name}}</td>
+            <td>{{x.length}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      
+      <section>
+        <div ng-init="monto=0;euro=0.78;colon=540.71">
+
+          <label for="txtCosto">Ingrese la cantidad: </label>
+          <input type="number" id="txtCosto" min="0" ng-model="monto"/>
+
+          <label for"txtEuro">Total en euros: </label>
+          <output type="text" id="txtEuro">{{monto/euro | currency:'€'}}</output>
+
+          <label for"txtColones">Total en colones: </label>
+          <output type="text" id="txtColones">{{monto*colon | currency:'₡'}}</output>
+        </div>
+      </section>
+
+    <script src="js/angular.js"></script>
+  </body>
+</html>
